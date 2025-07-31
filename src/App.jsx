@@ -6,12 +6,13 @@ import ChatMessage from "./components/ChatMessage";
 
 const App = () => {
   const [chatHistory, setChatHistory] = useState([]);
+  const [showChatbot, setShowChatbot] = useState(false);
   const chatBodyRef = useRef();
 
   // Helper function to update chat history 
  const generateBotResposnse = async (history) => {
-  const updateHistory= (text) =>{
-    setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), {role: "model", text}]);
+  const updateHistory= (text, isError = false) =>{
+    setChatHistory(prev => [...prev.filter(msg => msg.text !== "Thinking..."), {role: "model", text, isError}]);
   }
 
   const formattedHistory = history.map(({ role, text }) => ({
@@ -40,7 +41,7 @@ const App = () => {
     trim();
     updateHistory(apiResponseText);
   } catch (error) {
-    console.error("API Error:", error.message);
+    updateHistory(error.message, true);
   }
 };
 
@@ -51,7 +52,12 @@ useEffect(() => {
 
 
   return (
-    <div className="container">
+    <div className={`container ${showChatbot ? "show-chatbot": ""}`}>
+      <button onClick={() =>  setShowChatbot((prev) => !prev)} id="chatbot-toggler">
+        <span className="material-symbols-rounded">mode_comment</span>
+        <span className="material-symbols-rounded">close</span>
+      </button>
+
       <div className="chatbox-popup">
         {/* Chatbot Header */}
         <div className="chat-header">
@@ -59,7 +65,8 @@ useEffect(() => {
             <ChatbotIcon />
             <h2 className="logo-text">Chatbot</h2>
           </div>
-          <button className="material-symbols-rounded">keyboard_arrow_down</button>
+          <button onClick={() =>  setShowChatbot((prev) => !prev)}
+          className="material-symbols-rounded">keyboard_arrow_down</button>
         </div>
 
         {/* Chatbot Body */}
