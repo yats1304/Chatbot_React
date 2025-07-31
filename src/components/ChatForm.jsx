@@ -29,7 +29,7 @@ const Chatform = ({ chatHistory, setChatHistory, generateBotResposnse }) => {
       ]);
     }, 600);
   };
-
+ 
   return (
     <form className="chat-form" onSubmit={handleFormSubmit}>
       <input
@@ -46,4 +46,4 @@ const Chatform = ({ chatHistory, setChatHistory, generateBotResposnse }) => {
   );
 };
 
-export default ChatForm;
+export default Chatform;
