@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ChatbotIcon from "./components/ChatbotIcon";
-import Chatform from "./components/ChatForm";
+import ChatForm from "./components/ChatForm";
 import ChatMessage from "./components/ChatMessage";
 
 
@@ -79,7 +79,7 @@ useEffect(() => {
 
         {/* Chatbot Footer */}
         <div className="chat-footer">
-          <Chatform chatHistory={chatHistory} setChatHistory={setChatHistory} generateBotResposnse= {generateBotResposnse} />
+          <ChatForm chatHistory={chatHistory} setChatHistory={setChatHistory} generateBotResposnse= {generateBotResposnse} />
         </div>
       </div>
     </div>
