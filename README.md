@@ -1,13 +1,35 @@
-# React + Vite
+# 🤖 AI ChatBot App (React + Gemini 2.5 API)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a smart and responsive ChatBot application built using **React** and powered by **Google's Gemini 2.5 API**. It enables users to have real-time conversations with an AI, similar to ChatGPT.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+- 🔹 Interactive Chat Interface
+- 🤖 Gemini 2.5 API Integration (Google AI)
+- ⏱️ Real-time message handling
+- 🧠 Context-aware AI responses
+- 📱 Fully Responsive (Mobile-Friendly)
+- 🎨 Tailwind CSS Styling
+- 🌙 (Optional) Dark Mode
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# Chatbot_React" 
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: React, Vite
+- **Styling**: Tailwind CSS
+- **AI Backend**: Gemini 2.5 API (Google Generative AI)
+- **Hosting**: Vercel (or your preferred platform)
+
+---
+
+## 🚀 Getting Started
+
+### Clone the Repository
+```bash
+git clone https://github.com/yats1304/your-repo-name.git
+cd your-repo-name
+npm install
+npm run dev
